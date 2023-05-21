@@ -46,6 +46,8 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          token: ${{ secrets.PAT }}
+          repository-name: huangyinhaow/note
           branch: publish
           folder: public
           force: true
