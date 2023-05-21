@@ -1,6 +1,6 @@
 baseURL = "https://quartz.jzhao.xyz/"
-languageCode = "en-us"
-relativeURLs = false
+languageCode = "zh-cn"
+relativeURLs = true
 disablePathToLower = true
 ignoreFiles = [
     "/content/templates/*",
