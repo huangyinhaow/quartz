@@ -24,6 +24,7 @@ jobs:
       - name: Move content
         working-directory: note
         run: |
+          rm -rf template temp
           mv assets/* ../content
           mv **/*.md ../content
       - name: Build Link Index
