@@ -5,7 +5,8 @@ on:
       - hugo
   workflow_dispatch:
   workflow_call:
-permissions: read-all
+permissions:
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -42,9 +43,9 @@ jobs:
       - name: Build
         run: hugo --minify
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: publish # deploying branch
-          cname: recollect.top
+          branch: publish
+          folder: public
+          force: true
+          single-commit: true
